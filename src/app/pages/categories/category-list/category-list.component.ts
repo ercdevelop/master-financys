@@ -1,4 +1,6 @@
+import { CategoryService } from './../shared/category.service';
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../shared/category.model';
 
 @Component({
   selector: 'app-category-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryListComponent implements OnInit {
 
-  constructor() { }
+  categories: Category[] = [];
+
+  constructor( private categorieService: CategoryService) { }
 
   ngOnInit() {
+    this.categorieService.getAll().subscribe(
+      categories => this.categories = categories,
+      error=> alert('Erro ao carregar a lista')
+
+
+    )
+
   }
 
 }
