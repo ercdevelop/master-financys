@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { CategoryService } from './../shared/category.service';
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../shared/category.model';
@@ -20,6 +21,20 @@ export class CategoryListComponent implements OnInit {
 
 
     )
+
+  }
+
+  deleteCategory(category){
+
+    const mustDelete = confirm('Deseja realmente excluir este intem?');
+
+    if (mustDelete){
+
+          this.categorieService.delete(category.id).subscribe(
+            ()=> this.categories = this.categories.filter(element => element != category),
+            ()=> alert("Erro ao tentar excluir!")
+          )
+    }
 
   }
 
