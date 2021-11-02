@@ -13,5 +13,15 @@ constructor(
   public Category?: Category
   ) {}
 
+  static types = {
+    expense:'Despesa' ,
+    renerue:'Receita'
+
+  };
+
+  get paidText() {
+    return this.paid ?'Pago' : 'Pendente'
+  }
+
 
 }
