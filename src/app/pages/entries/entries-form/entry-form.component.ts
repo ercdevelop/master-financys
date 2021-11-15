@@ -4,9 +4,9 @@ import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 import { ActivatedRoute,Router } from '@angular/router';
 import { EntryService } from '../shared/entry.service';
 import { switchMap } from 'rxjs/operators';
-import { toastr}  from 'toastr';
 import { Entry } from '../shared/entry.models';
 import { Category } from '../../categories/shared/category.model';
+import   toastr  from 'toastr';
 
 
 @Component({
