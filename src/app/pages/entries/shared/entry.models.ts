@@ -10,7 +10,7 @@ constructor(
   public date?:string,
   public paid?: boolean,
   public categoryId?: number,
-  public Category?: Category
+  public category?: Category
   ) {}
 
   static types = {
