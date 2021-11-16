@@ -15,7 +15,7 @@ constructor(
 
   static types = {
     expense:'Despesa' ,
-    renerue:'Receita'
+    revenue:'Receita'
 
   };
 
