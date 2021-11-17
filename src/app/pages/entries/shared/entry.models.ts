@@ -13,15 +13,27 @@ constructor(
   public category?: Category
   ) {}
 
-  static types = {
+    static types = {
     expense:'Despesa' ,
     revenue:'Receita'
 
   };
 
+
+
   get paidText() {
     return this.paid ?'Pago' : 'Pendente'
   }
+
+
+}
+
+
+export class Types {
+
+ public  expense:string = 'Despesa'
+ public  revenue: string ='Receita'
+
 
 
 }
