@@ -6,10 +6,6 @@ import { Category } from './../shared/category.model';
 import { switchMap } from 'rxjs/operators';
 import  toastr  from 'toastr';
 
-
-
-
-
 @Component({
   selector: 'app-category-form',
   templateUrl: './category-form.component.html',
