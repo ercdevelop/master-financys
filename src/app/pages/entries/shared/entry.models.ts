@@ -23,6 +23,9 @@ constructor(
 
   };
 
+  static fromJson(jsonData: any): Entry{
+    return Object.assign(new Entry(), jsonData);
+  }
 
 
   get paidText() {
