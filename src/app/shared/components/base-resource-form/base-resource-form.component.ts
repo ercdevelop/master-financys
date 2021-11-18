@@ -64,7 +64,7 @@ export abstract  class BaseResourceFormComponent<T extends BaseResourceModel> im
   }
 
 
-  private loadResource(){
+  protected loadResource(){
     if (this.currentAction =="edit"){
       this.route.paramMap.pipe(
         switchMap(params => this.resourceService.getById(+params.get("id")))
@@ -80,18 +80,18 @@ export abstract  class BaseResourceFormComponent<T extends BaseResourceModel> im
     }
   }
 
- private setPageTitle() {
+ protected setPageTitle() {
     if(this.currentAction =="new"){
       this.pageTitle = this.creationPageTitle()
     } else {
       this.pageTitle = this.editionTitle()
     }
   }
-  creationPageTitle(): string {
+  protected creationPageTitle(): string {
     return "Novo"
   }
 
-  editionTitle(): string {
+  protected editionTitle(): string {
     return "Edição"
   }
 
