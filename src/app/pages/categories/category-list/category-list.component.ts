@@ -1,4 +1,4 @@
-import { element } from 'protractor';
+import { BaseResourceListComponent } from './../../../shared/components/base-resource-list/base-resource-list.components';
 import { CategoryService } from './../shared/category.service';
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../shared/category.model';
@@ -8,34 +8,11 @@ import { Category } from '../shared/category.model';
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.css']
 })
-export class CategoryListComponent implements OnInit {
+export class CategoryListComponent extends BaseResourceListComponent<Category> {
 
-  categories: Category[] = [];
-
-  constructor( private categorieService: CategoryService) { }
-
-  ngOnInit() {
-    this.categorieService.getAll().subscribe(
-      categories => this.categories = categories,
-      error=> alert('Erro ao carregar a lista')
-
-
-    )
-
-  }
-
-  deleteCategory(category){
-
-    const mustDelete = confirm('Deseja realmente excluir este intem?');
-
-    if (mustDelete){
-
-          this.categorieService.delete(category.id).subscribe(
-            ()=> this.categories = this.categories.filter(element => element != category),
-            ()=> alert("Erro ao tentar excluir!")
-          )
-    }
-
+  constructor(private categorieService: CategoryService) {
+    super(categorieService);
   }
 
 }
+
