@@ -15,6 +15,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
   exports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule,
     // Shared Components
     BreadCrumbComponent,
     PageHeaderComponent
