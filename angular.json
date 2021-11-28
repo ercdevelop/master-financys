@@ -171,5 +171,8 @@
       }
     }
   },
-  "defaultProject": "finansys"
+  "defaultProject": "finansys",
+  "cli": {
+    "analytics": "6a80d6dc-780f-417f-b927-1684d0e79002"
+  }
 }
