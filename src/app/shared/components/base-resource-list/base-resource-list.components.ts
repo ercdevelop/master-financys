@@ -1,7 +1,9 @@
 import { BaseResourceService } from 'src/app/shared/services/base-resource.service';
 import { BaseResourceModel } from '../../models/base-resource.models';
+import { Directive } from "@angular/core";
 
 
+@Directive()
 export class BaseResourceListComponent<T extends BaseResourceModel> {
 
   resources: T[] = []
